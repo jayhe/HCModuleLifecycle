@@ -1,25 +1,14 @@
 //
-//  AppDelegate.m
+//  HCModuleLifecycle.m
 //  HCMoudleLifecycle
 //
 //  Created by hechao on 2019/2/15.
 //  Copyright © 2019 hechao. All rights reserved.
 //
 
-#import "AppDelegate.h"
-#import "HCModulesLifecycleManager.h"
+#import "HCModuleLifecycle.h"
 
-@interface AppDelegate ()
-
-@end
-
-@implementation AppDelegate
-
-- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [[HCModulesLifecycleManager sharedInstance] hookAppLifeCycleFromDelegate:self];
-    
-    return YES;
-}
+@implementation HCModuleLifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -52,6 +41,5 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-
 
 @end

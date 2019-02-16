@@ -1,0 +1,6 @@
+module Pods_HCMoudleLifecycle {
+  umbrella header "Pods-HCMoudleLifecycle-umbrella.h"
+
+  export *
+  module * { export * }
+}

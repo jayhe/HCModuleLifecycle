@@ -14,6 +14,12 @@
 		1017A8B72216A622006DBC30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1017A8B52216A622006DBC30 /* LaunchScreen.storyboard */; };
 		1017A8BA2216A622006DBC30 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1017A8B92216A622006DBC30 /* main.m */; };
 		1017A8C42216A622006DBC30 /* HCMoudleLifecycleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1017A8C32216A622006DBC30 /* HCMoudleLifecycleTests.m */; };
+		1017A8D12216A6D7006DBC30 /* HCModuleLifecycle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1017A8D02216A6D7006DBC30 /* HCModuleLifecycle.m */; };
+		1017A8D42216A74E006DBC30 /* HCModulesLifecycleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1017A8D32216A74E006DBC30 /* HCModulesLifecycleManager.m */; };
+		1017A8D92216B5B6006DBC30 /* MoudleALifecycle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1017A8D82216B5B6006DBC30 /* MoudleALifecycle.m */; };
+		1017A8DC2216B5C7006DBC30 /* ModuleBLifecycle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1017A8DB2216B5C7006DBC30 /* ModuleBLifecycle.m */; };
+		A2414FDDDB22A6662E0C4835 /* libPods-HCMoudleLifecycleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09728E27C06587DA02A64D2A /* libPods-HCMoudleLifecycleTests.a */; };
+		FBB11DC30405ABFEBB6F38BD /* libPods-HCMoudleLifecycle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 142B32A47762CDA1B891C22E /* libPods-HCMoudleLifecycle.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09728E27C06587DA02A64D2A /* libPods-HCMoudleLifecycleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HCMoudleLifecycleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1017A8A72216A620006DBC30 /* HCMoudleLifecycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HCMoudleLifecycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1017A8AA2216A620006DBC30 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1017A8AB2216A620006DBC30 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -40,6 +47,19 @@
 		1017A8BF2216A622006DBC30 /* HCMoudleLifecycleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HCMoudleLifecycleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1017A8C32216A622006DBC30 /* HCMoudleLifecycleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HCMoudleLifecycleTests.m; sourceTree = "<group>"; };
 		1017A8C52216A622006DBC30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1017A8CF2216A6D7006DBC30 /* HCModuleLifecycle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HCModuleLifecycle.h; sourceTree = "<group>"; };
+		1017A8D02216A6D7006DBC30 /* HCModuleLifecycle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HCModuleLifecycle.m; sourceTree = "<group>"; };
+		1017A8D22216A74E006DBC30 /* HCModulesLifecycleManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HCModulesLifecycleManager.h; sourceTree = "<group>"; };
+		1017A8D32216A74E006DBC30 /* HCModulesLifecycleManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HCModulesLifecycleManager.m; sourceTree = "<group>"; };
+		1017A8D72216B5B6006DBC30 /* MoudleALifecycle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoudleALifecycle.h; sourceTree = "<group>"; };
+		1017A8D82216B5B6006DBC30 /* MoudleALifecycle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoudleALifecycle.m; sourceTree = "<group>"; };
+		1017A8DA2216B5C7006DBC30 /* ModuleBLifecycle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModuleBLifecycle.h; sourceTree = "<group>"; };
+		1017A8DB2216B5C7006DBC30 /* ModuleBLifecycle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModuleBLifecycle.m; sourceTree = "<group>"; };
+		142B32A47762CDA1B891C22E /* libPods-HCMoudleLifecycle.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HCMoudleLifecycle.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E80B8606D9FCF8004379126 /* Pods-HCMoudleLifecycleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCMoudleLifecycleTests.debug.xcconfig"; path = "Target Support Files/Pods-HCMoudleLifecycleTests/Pods-HCMoudleLifecycleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		86E941DD6D37F6FF52FDCD18 /* Pods-HCMoudleLifecycle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCMoudleLifecycle.debug.xcconfig"; path = "Target Support Files/Pods-HCMoudleLifecycle/Pods-HCMoudleLifecycle.debug.xcconfig"; sourceTree = "<group>"; };
+		A3BFCACA2D2F3E09449E8F3B /* Pods-HCMoudleLifecycleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCMoudleLifecycleTests.release.xcconfig"; path = "Target Support Files/Pods-HCMoudleLifecycleTests/Pods-HCMoudleLifecycleTests.release.xcconfig"; sourceTree = "<group>"; };
+		D2147E5FFEB06F38291DA54A /* Pods-HCMoudleLifecycle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCMoudleLifecycle.release.xcconfig"; path = "Target Support Files/Pods-HCMoudleLifecycle/Pods-HCMoudleLifecycle.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBB11DC30405ABFEBB6F38BD /* libPods-HCMoudleLifecycle.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2414FDDDB22A6662E0C4835 /* libPods-HCMoudleLifecycleTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +88,8 @@
 				1017A8A92216A620006DBC30 /* HCMoudleLifecycle */,
 				1017A8C22216A622006DBC30 /* HCMoudleLifecycleTests */,
 				1017A8A82216A620006DBC30 /* Products */,
+				5AF14B4A1AA65CCE2155705A /* Pods */,
+				42319DD838604DAD2E015254 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,10 +105,13 @@
 		1017A8A92216A620006DBC30 /* HCMoudleLifecycle */ = {
 			isa = PBXGroup;
 			children = (
+				1017A8CE2216A642006DBC30 /* Classes */,
 				1017A8AA2216A620006DBC30 /* AppDelegate.h */,
 				1017A8AB2216A620006DBC30 /* AppDelegate.m */,
 				1017A8AD2216A620006DBC30 /* ViewController.h */,
 				1017A8AE2216A620006DBC30 /* ViewController.m */,
+				1017A8D62216B59E006DBC30 /* ModuleA */,
+				1017A8D52216B59E006DBC30 /* ModuleB */,
 				1017A8B02216A620006DBC30 /* Main.storyboard */,
 				1017A8B32216A622006DBC30 /* Assets.xcassets */,
 				1017A8B52216A622006DBC30 /* LaunchScreen.storyboard */,
@@ -103,6 +130,55 @@
 			path = HCMoudleLifecycleTests;
 			sourceTree = "<group>";
 		};
+		1017A8CE2216A642006DBC30 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1017A8CF2216A6D7006DBC30 /* HCModuleLifecycle.h */,
+				1017A8D02216A6D7006DBC30 /* HCModuleLifecycle.m */,
+				1017A8D22216A74E006DBC30 /* HCModulesLifecycleManager.h */,
+				1017A8D32216A74E006DBC30 /* HCModulesLifecycleManager.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		1017A8D52216B59E006DBC30 /* ModuleB */ = {
+			isa = PBXGroup;
+			children = (
+				1017A8DA2216B5C7006DBC30 /* ModuleBLifecycle.h */,
+				1017A8DB2216B5C7006DBC30 /* ModuleBLifecycle.m */,
+			);
+			path = ModuleB;
+			sourceTree = "<group>";
+		};
+		1017A8D62216B59E006DBC30 /* ModuleA */ = {
+			isa = PBXGroup;
+			children = (
+				1017A8D72216B5B6006DBC30 /* MoudleALifecycle.h */,
+				1017A8D82216B5B6006DBC30 /* MoudleALifecycle.m */,
+			);
+			path = ModuleA;
+			sourceTree = "<group>";
+		};
+		42319DD838604DAD2E015254 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				142B32A47762CDA1B891C22E /* libPods-HCMoudleLifecycle.a */,
+				09728E27C06587DA02A64D2A /* libPods-HCMoudleLifecycleTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5AF14B4A1AA65CCE2155705A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				86E941DD6D37F6FF52FDCD18 /* Pods-HCMoudleLifecycle.debug.xcconfig */,
+				D2147E5FFEB06F38291DA54A /* Pods-HCMoudleLifecycle.release.xcconfig */,
+				2E80B8606D9FCF8004379126 /* Pods-HCMoudleLifecycleTests.debug.xcconfig */,
+				A3BFCACA2D2F3E09449E8F3B /* Pods-HCMoudleLifecycleTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -110,6 +186,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1017A8C82216A622006DBC30 /* Build configuration list for PBXNativeTarget "HCMoudleLifecycle" */;
 			buildPhases = (
+				C8931F8D8C4AEC50BF889D8B /* [CP] Check Pods Manifest.lock */,
 				1017A8A32216A620006DBC30 /* Sources */,
 				1017A8A42216A620006DBC30 /* Frameworks */,
 				1017A8A52216A620006DBC30 /* Resources */,
@@ -127,6 +204,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1017A8CB2216A622006DBC30 /* Build configuration list for PBXNativeTarget "HCMoudleLifecycleTests" */;
 			buildPhases = (
+				CFA908E42E872FDF39E4BD0A /* [CP] Check Pods Manifest.lock */,
 				1017A8BB2216A622006DBC30 /* Sources */,
 				1017A8BC2216A622006DBC30 /* Frameworks */,
 				1017A8BD2216A622006DBC30 /* Resources */,
@@ -198,6 +276,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C8931F8D8C4AEC50BF889D8B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HCMoudleLifecycle-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CFA908E42E872FDF39E4BD0A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HCMoudleLifecycleTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1017A8A32216A620006DBC30 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -205,7 +330,11 @@
 			files = (
 				1017A8AF2216A620006DBC30 /* ViewController.m in Sources */,
 				1017A8BA2216A622006DBC30 /* main.m in Sources */,
+				1017A8DC2216B5C7006DBC30 /* ModuleBLifecycle.m in Sources */,
+				1017A8D92216B5B6006DBC30 /* MoudleALifecycle.m in Sources */,
 				1017A8AC2216A620006DBC30 /* AppDelegate.m in Sources */,
+				1017A8D42216A74E006DBC30 /* HCModulesLifecycleManager.m in Sources */,
+				1017A8D12216A6D7006DBC30 /* HCModuleLifecycle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +490,7 @@
 		};
 		1017A8C92216A622006DBC30 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86E941DD6D37F6FF52FDCD18 /* Pods-HCMoudleLifecycle.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -378,6 +508,7 @@
 		};
 		1017A8CA2216A622006DBC30 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2147E5FFEB06F38291DA54A /* Pods-HCMoudleLifecycle.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -395,6 +526,7 @@
 		};
 		1017A8CC2216A622006DBC30 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E80B8606D9FCF8004379126 /* Pods-HCMoudleLifecycleTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -414,6 +546,7 @@
 		};
 		1017A8CD2216A622006DBC30 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3BFCACA2D2F3E09449E8F3B /* Pods-HCMoudleLifecycleTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
