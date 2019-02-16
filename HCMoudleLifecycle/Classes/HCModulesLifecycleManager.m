@@ -31,15 +31,20 @@
 
 - (void)hookAppLifeCycleFromDelegate:(UIResponder<UIApplicationDelegate> *)appDelegate {
     unsigned int numOfModules = 0;
-    struct objc_method_description *methodDescriptions = protocol_copyMethodDescriptionList(@protocol(UIApplicationDelegate), NO, YES, &numOfModules);
+    struct objc_method_description *methodDescriptions = protocol_copyMethodDescriptionList(@protocol(UIApplicationDelegate), NO, YES, &numOfModules); //获取代理方法的方法描述信息
     for (NSInteger i = 0; i < numOfModules; i++) {
         struct objc_method_description methodDescription = methodDescriptions[i];
         SEL selector = methodDescription.name;
-        [appDelegate aspect_hookSelector:selector withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo){
+        Method method = class_getInstanceMethod([HCModuleLifecycle class], selector);
+        if (method == nil) {
+            continue; //hook HCModuleLifecycle实现的方法，其他的过滤掉
+        }
+        
+        [appDelegate aspect_hookSelector:selector withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo){ //AppDelegate执行相应方法之后，在执行模块的方法
             for (HCModuleLifecycle *moduleLifecycle in self.modules) {
                 if ([moduleLifecycle isKindOfClass:[HCModuleLifecycle class]] && [moduleLifecycle respondsToSelector:selector]) {
-                    NSInvocation *invocation = aspectInfo.originalInvocation;
-                    invocation.target = moduleLifecycle;
+                    NSInvocation *invocation = aspectInfo.originalInvocation; //原始调用
+                    invocation.target = moduleLifecycle; //修改target为模块对象
                     invocation.selector = selector;
                     [invocation invoke];
                 }
@@ -52,7 +57,6 @@
     self = [super init];
     if (self) {
         _modules = [NSMutableArray arrayWithCapacity:0];
-        // 获取所有实现了UIApplicationDelegate协议的HCModuleLifecycle的子类，就是app的模块
         int numberOfClasses = objc_getClassList(NULL, 0);
         Class *classes = (Class *)malloc(sizeof(Class) * numberOfClasses);
         numberOfClasses = objc_getClassList(classes, numberOfClasses);
@@ -64,13 +68,14 @@
             for (int i = 0; i < numberOfClasses; ++i) {
                 Class candidateClass = classes[i];
                 Class candidateOrSuper = candidateClass;
+                // 获取所有实现了UIApplicationDelegate协议的类
                 while (candidateOrSuper != nil && class_conformsToProtocol(candidateOrSuper, protocol) == NO) {
                     candidateOrSuper = class_getSuperclass(candidateOrSuper);
                 }
                 
                 if (candidateOrSuper != nil) {
                     id instance = [candidateClass new];
-                    if ([instance isKindOfClass:[HCModuleLifecycle class]] && ![instance isMemberOfClass:[HCModuleLifecycle class]]) {
+                    if ([instance isKindOfClass:[HCModuleLifecycle class]] && ![instance isMemberOfClass:[HCModuleLifecycle class]]) { // 过滤筛选出模块
                         [_modules addObject:instance];
                     }
                 }
