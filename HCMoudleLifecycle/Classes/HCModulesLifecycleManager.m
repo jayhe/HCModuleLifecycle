@@ -30,27 +30,30 @@
 }
 
 - (void)hookAppLifeCycleFromDelegate:(UIResponder<UIApplicationDelegate> *)appDelegate {
-    unsigned int numOfModules = 0;
-    struct objc_method_description *methodDescriptions = protocol_copyMethodDescriptionList(@protocol(UIApplicationDelegate), NO, YES, &numOfModules); //获取代理方法的方法描述信息
-    for (NSInteger i = 0; i < numOfModules; i++) {
-        struct objc_method_description methodDescription = methodDescriptions[i];
-        SEL selector = methodDescription.name;
-        Method method = class_getInstanceMethod([HCModuleLifecycle class], selector);
-        if (method == nil) {
-            continue; //hook HCModuleLifecycle实现的方法，其他的过滤掉
-        }
-        
-        [appDelegate aspect_hookSelector:selector withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo){ //AppDelegate执行相应方法之后，在执行模块的方法
-            for (HCModuleLifecycle *moduleLifecycle in self.modules) {
-                if ([moduleLifecycle isKindOfClass:[HCModuleLifecycle class]] && [moduleLifecycle respondsToSelector:selector]) {
-                    NSInvocation *invocation = aspectInfo.originalInvocation; //原始调用
-                    invocation.target = moduleLifecycle; //修改target为模块对象
-                    invocation.selector = selector;
-                    [invocation invoke];
-                }
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        unsigned int numOfModules = 0;
+        struct objc_method_description *methodDescriptions = protocol_copyMethodDescriptionList(@protocol(UIApplicationDelegate), NO, YES, &numOfModules); //获取代理方法的方法描述信息
+        for (NSInteger i = 0; i < numOfModules; i++) {
+            struct objc_method_description methodDescription = methodDescriptions[i];
+            SEL selector = methodDescription.name;
+            Method method = class_getInstanceMethod([HCModuleLifecycle class], selector);
+            if (method == nil) {
+                continue; //hook HCModuleLifecycle实现的方法，其他的过滤掉
             }
-        } error:nil];
-    }
+            
+            [appDelegate aspect_hookSelector:selector withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo){ //AppDelegate执行相应方法之后，在执行模块的方法
+                for (HCModuleLifecycle *moduleLifecycle in self.modules) {
+                    if ([moduleLifecycle isKindOfClass:[HCModuleLifecycle class]] && [moduleLifecycle respondsToSelector:selector]) {
+                        NSInvocation *invocation = aspectInfo.originalInvocation; //原始调用
+                        invocation.target = moduleLifecycle; //修改target为模块对象
+                        invocation.selector = selector;
+                        [invocation invoke];
+                    }
+                }
+            } error:nil];
+        }
+    });
 }
 
 - (instancetype)init {
