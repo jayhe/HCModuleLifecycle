@@ -78,7 +78,7 @@
                 
                 if (candidateOrSuper != nil) {
                     if ([candidateClass isSubclassOfClass:[HCModuleLifecycle class]]
-                        && ![NSStringFromClass(candidateClass) isEqualToString:NSStringFromClass([HCModuleLifecycle class])]) {
+                        && ![candidateClass isEqual:HCModuleLifecycle.class]) {
                         id instance = [candidateClass new];
                         [_modules addObject:instance];
                     }
