@@ -77,8 +77,9 @@
                 }
                 
                 if (candidateOrSuper != nil) {
-                    id instance = [candidateClass new];
-                    if ([instance isKindOfClass:[HCModuleLifecycle class]] && ![instance isMemberOfClass:[HCModuleLifecycle class]]) { // 过滤筛选出模块
+                    if ([candidateClass isSubclassOfClass:[HCModuleLifecycle class]]
+                        && ![NSStringFromClass(candidateClass) isEqualToString:NSStringFromClass([HCModuleLifecycle class])]) {
+                        id instance = [candidateClass new];
                         [_modules addObject:instance];
                     }
                 }
