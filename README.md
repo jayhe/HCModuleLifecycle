@@ -1,14 +1,15 @@
-##HCModuleLifecycle
-####1.概述
+## HCModuleLifecycle
+
+#### 1.概述
 该库主要用于App的模块声明周期管理，将AppDelegate中各模块的业务剥离到模块中去 ，内部实现了自动获取模块的逻辑，只需要在合适的时机调用钩子函数hookAppLifeCycleFromDelegate就可以将App的生命周期管理分发到各个模块中去
-####2.集成
+#### 2.集成
 1. 使用cocoapod
 > pod 'HCModuleLifecycle'
 2. 手动方式
  * 将项目下的Classes目录下文件添加到你的工程
  * 添加依赖的[Aspects](https://github.com/steipete/Aspects)库到你的工程
  
-####3.使用
+#### 3.使用
 1. App的各个模块创建一个继承HCModuleLifecycle的子类，在生命周期的方法中添加逻辑
 例如：
 ```objectivec
@@ -33,7 +34,7 @@
  ```
  hookAppLifeCycleFromDelegate方法主要是将AppDelegate的生命周期的方法hook了，在AppDelegate 执行方法后执行各个模块相对应的方法
 
-####4.代码解析
+#### 4.代码解析
 1. 生命周期方法由AppDelegate转发到各个模块实现
 >hook生命周期函数，在原函数执行之后执行各个模块的实现
 ```objectivec
