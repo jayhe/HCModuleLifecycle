@@ -80,7 +80,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://github.com/jayhe/HCMoudleLifecycle.git", :commit => "98fbe95a293cd865f1f4ff492888d6854e8df058" }
+  spec.source       = { :git => "https://github.com/jayhe/HCMoudleLifecycle.git", :tag => spec.version.to_s }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
