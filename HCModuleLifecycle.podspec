@@ -15,7 +15,7 @@ Pod::Spec.new do |spec|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  spec.name         = "HCMoudleLifecycle"
+  spec.name         = "HCModuleLifecycle"
   spec.version      = "0.0.1"
   spec.summary      = "App的模块声明周期管理，主要是瘦身AppDelegate，将AppDelegate中各模块的业务剥离到模块中去"
 
@@ -28,7 +28,7 @@ Pod::Spec.new do |spec|
   管理各个模块的生命周期，自动获取App的模块无需注册，一键式转发生命周期调度到各个模块
                    DESC
 
-  spec.homepage     = "https://github.com/jayhe/HCMoudleLifecycle"
+  spec.homepage     = "https://github.com/jayhe/HCModuleLifecycle"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -80,7 +80,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://github.com/jayhe/HCMoudleLifecycle.git", :tag => spec.version.to_s }
+  spec.source       = { :git => "https://github.com/jayhe/HCModuleLifecycle.git", :tag => spec.version.to_s }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
