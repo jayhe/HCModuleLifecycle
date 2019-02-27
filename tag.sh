@@ -33,7 +33,7 @@ fi
 read -p "confirm? (y/n):" confirmed
 done
 
-specFilePath="HCMoudleLifecycle.podspec"
+specFilePath="HCModuleLifecycle.podspec"
 
 echo "editing..."
 sed -i "" "s%s.version .*%s.version       = \"${tag}\"%g" "$specFilePath"
